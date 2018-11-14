@@ -1,0 +1,11 @@
+﻿tiny web server로 개발환경 셋업
+https://www.ritlabs.com/en/products/tinyweb/install.php
+
+- 웹 서버 실행
+tiny D:\KW_DATA\97_GIT\G2IS\_source\G2IS\DUMP\www
+
+- 웹 서버 종료
+taskkill /F /IM tiny.exe
+
+- 맵 API Key [다음 맵]
+d251a73d179017cb93ab42a6c4c43c43
