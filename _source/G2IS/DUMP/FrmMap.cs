@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json.Linq;
 
 namespace DUMP
 {
@@ -50,10 +51,17 @@ namespace DUMP
 			if (this.webMap.Document != null)
 			{
 				HtmlDocument doc = webMap.Document;
-				String str = doc.InvokeScript(MapFunc.GetCenter).ToString();
-				//object result = webMap.Document.InvokeScript(MapFunc.GetCenter);
-				//MessageBox.Show(result.ToString());
-				MessageBox.Show(str);
+				String result = doc.InvokeScript(MapFunc.GetCenter).ToString();
+
+				//JAVASCRIPT에서 JSON형태로 데이터를 리턴
+				MessageBox.Show(result.ToString());
+
+				//JArray json = JArray.Parse(result);
+				JObject json = JObject.Parse(result);
+				MessageBox.Show(json.Count.ToString());
+				MessageBox.Show(json["lat"].ToString());
+
+				MessageBox.Show(json["lng"].ToString());
 			}
 		}
 	}

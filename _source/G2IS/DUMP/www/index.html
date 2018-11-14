@@ -10,6 +10,9 @@
 <div id="map" style="width:100%;height:600px;"></div>    
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d251a73d179017cb93ab42a6c4c43c43"></script>
+
+<script type="text/javascript" src="json.js"></script>
+
 <script>
 function test(name, address) {  
 	window.alert("Name is " + name + "; address is " + address);  
@@ -34,11 +37,12 @@ function AddMarker(lat, lng){
 
 function GetCenter(){
 	var position = map.getCenter();
-
-	//return position.toString();
-
-	var point = [position.getLat(), position.getLng()];
-	return point;
+	var temp = new Object();
+	
+	temp.lat = position.getLat();
+	temp.lng = position.getLng();
+ 
+	return JSON.stringify(temp);
 }
 
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
