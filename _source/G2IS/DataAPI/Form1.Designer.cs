@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.btnLoad = new System.Windows.Forms.Button();
-            this.rtxtData = new System.Windows.Forms.RichTextBox();
+            this.mainGridview = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.mainGridview)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLoad
@@ -40,24 +41,27 @@
             this.btnLoad.TabIndex = 0;
             this.btnLoad.Text = "Load";
             this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
-            // rtxtData
+            // mainGridview
             // 
-            this.rtxtData.Location = new System.Drawing.Point(21, 193);
-            this.rtxtData.Name = "rtxtData";
-            this.rtxtData.Size = new System.Drawing.Size(1414, 697);
-            this.rtxtData.TabIndex = 1;
-            this.rtxtData.Text = "";
+            this.mainGridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.mainGridview.Location = new System.Drawing.Point(21, 193);
+            this.mainGridview.Name = "mainGridview";
+            this.mainGridview.RowTemplate.Height = 37;
+            this.mainGridview.Size = new System.Drawing.Size(1414, 697);
+            this.mainGridview.TabIndex = 1;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1447, 902);
-            this.Controls.Add(this.rtxtData);
+            this.Controls.Add(this.mainGridview);
             this.Controls.Add(this.btnLoad);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.mainGridview)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -65,7 +69,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnLoad;
-        private System.Windows.Forms.RichTextBox rtxtData;
+        private System.Windows.Forms.DataGridView mainGridview;
     }
 }
 
