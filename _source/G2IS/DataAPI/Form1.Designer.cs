@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
 			this.btnLoad = new System.Windows.Forms.Button();
 			this.btnExcel = new System.Windows.Forms.Button();
 			this.dgvData = new System.Windows.Forms.DataGridView();
@@ -88,15 +89,57 @@
 			this.Text = "Form1";
 			((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
 			this.ResumeLayout(false);
+=======
+            this.btnLoad = new System.Windows.Forms.Button();
+            this.mainGridview = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.mainGridview)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.Location = new System.Drawing.Point(21, 12);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(296, 175);
+            this.btnLoad.TabIndex = 0;
+            this.btnLoad.Text = "Load";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
+            // mainGridview
+            // 
+            this.mainGridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.mainGridview.Location = new System.Drawing.Point(21, 193);
+            this.mainGridview.Name = "mainGridview";
+            this.mainGridview.RowTemplate.Height = 37;
+            this.mainGridview.Size = new System.Drawing.Size(1414, 697);
+            this.mainGridview.TabIndex = 1;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1447, 902);
+            this.Controls.Add(this.mainGridview);
+            this.Controls.Add(this.btnLoad);
+            this.Name = "Form1";
+            this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.mainGridview)).EndInit();
+            this.ResumeLayout(false);
+>>>>>>> master
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button btnLoad;
+<<<<<<< HEAD
 		private System.Windows.Forms.Button btnExcel;
 		private System.Windows.Forms.DataGridView dgvData;
 		private System.Windows.Forms.RichTextBox rtxtResult;
 	}
+=======
+        private System.Windows.Forms.DataGridView mainGridview;
+    }
+>>>>>>> master
 }
 
