@@ -28,44 +28,75 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnLoad = new System.Windows.Forms.Button();
-            this.rtxtData = new System.Windows.Forms.RichTextBox();
-            this.SuspendLayout();
-            // 
-            // btnLoad
-            // 
-            this.btnLoad.Location = new System.Drawing.Point(21, 12);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(296, 175);
-            this.btnLoad.TabIndex = 0;
-            this.btnLoad.Text = "Load";
-            this.btnLoad.UseVisualStyleBackColor = true;
-            // 
-            // rtxtData
-            // 
-            this.rtxtData.Location = new System.Drawing.Point(21, 193);
-            this.rtxtData.Name = "rtxtData";
-            this.rtxtData.Size = new System.Drawing.Size(1414, 697);
-            this.rtxtData.TabIndex = 1;
-            this.rtxtData.Text = "";
-            // 
-            // Form1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1447, 902);
-            this.Controls.Add(this.rtxtData);
-            this.Controls.Add(this.btnLoad);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.ResumeLayout(false);
+			this.btnLoad = new System.Windows.Forms.Button();
+			this.btnExcel = new System.Windows.Forms.Button();
+			this.dgvData = new System.Windows.Forms.DataGridView();
+			this.rtxtResult = new System.Windows.Forms.RichTextBox();
+			((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
+			this.SuspendLayout();
+			// 
+			// btnLoad
+			// 
+			this.btnLoad.Location = new System.Drawing.Point(13, 8);
+			this.btnLoad.Margin = new System.Windows.Forms.Padding(2);
+			this.btnLoad.Name = "btnLoad";
+			this.btnLoad.Size = new System.Drawing.Size(182, 109);
+			this.btnLoad.TabIndex = 0;
+			this.btnLoad.Text = "Json";
+			this.btnLoad.UseVisualStyleBackColor = true;
+			this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+			// 
+			// btnExcel
+			// 
+			this.btnExcel.Location = new System.Drawing.Point(199, 8);
+			this.btnExcel.Margin = new System.Windows.Forms.Padding(2);
+			this.btnExcel.Name = "btnExcel";
+			this.btnExcel.Size = new System.Drawing.Size(182, 109);
+			this.btnExcel.TabIndex = 0;
+			this.btnExcel.Text = "Excel";
+			this.btnExcel.UseVisualStyleBackColor = true;
+			this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+			// 
+			// dgvData
+			// 
+			this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvData.Location = new System.Drawing.Point(13, 219);
+			this.dgvData.Name = "dgvData";
+			this.dgvData.RowTemplate.Height = 27;
+			this.dgvData.Size = new System.Drawing.Size(865, 333);
+			this.dgvData.TabIndex = 1;
+			// 
+			// rtxtResult
+			// 
+			this.rtxtResult.Location = new System.Drawing.Point(13, 123);
+			this.rtxtResult.Name = "rtxtResult";
+			this.rtxtResult.Size = new System.Drawing.Size(865, 90);
+			this.rtxtResult.TabIndex = 2;
+			this.rtxtResult.Text = "";
+			// 
+			// Form1
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(890, 564);
+			this.Controls.Add(this.rtxtResult);
+			this.Controls.Add(this.dgvData);
+			this.Controls.Add(this.btnExcel);
+			this.Controls.Add(this.btnLoad);
+			this.Margin = new System.Windows.Forms.Padding(2);
+			this.Name = "Form1";
+			this.Text = "Form1";
+			((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
+			this.ResumeLayout(false);
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button btnLoad;
-        private System.Windows.Forms.RichTextBox rtxtData;
-    }
+		private System.Windows.Forms.Button btnExcel;
+		private System.Windows.Forms.DataGridView dgvData;
+		private System.Windows.Forms.RichTextBox rtxtResult;
+	}
 }
 

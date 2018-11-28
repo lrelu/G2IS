@@ -32,8 +32,13 @@
 			this.단위테스트ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.alertTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.addMarkerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.webMap = new System.Windows.Forms.WebBrowser();
 			this.getCenterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.aPIServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.loadDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.webMap = new System.Windows.Forms.WebBrowser();
+			this.logToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.mnuMap.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -41,7 +46,9 @@
 			// 
 			this.mnuMap.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.mnuMap.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.단위테스트ToolStripMenuItem});
+            this.단위테스트ToolStripMenuItem,
+            this.aPIServerToolStripMenuItem,
+            this.logToolStripMenuItem});
 			this.mnuMap.Location = new System.Drawing.Point(0, 0);
 			this.mnuMap.Name = "mnuMap";
 			this.mnuMap.Size = new System.Drawing.Size(867, 28);
@@ -61,16 +68,38 @@
 			// alertTestToolStripMenuItem
 			// 
 			this.alertTestToolStripMenuItem.Name = "alertTestToolStripMenuItem";
-			this.alertTestToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+			this.alertTestToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
 			this.alertTestToolStripMenuItem.Text = "Alert Test";
 			this.alertTestToolStripMenuItem.Click += new System.EventHandler(this.alertTestToolStripMenuItem_Click);
 			// 
 			// addMarkerToolStripMenuItem
 			// 
 			this.addMarkerToolStripMenuItem.Name = "addMarkerToolStripMenuItem";
-			this.addMarkerToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+			this.addMarkerToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
 			this.addMarkerToolStripMenuItem.Text = "Add Marker";
 			this.addMarkerToolStripMenuItem.Click += new System.EventHandler(this.addMarkerToolStripMenuItem_Click);
+			// 
+			// getCenterToolStripMenuItem
+			// 
+			this.getCenterToolStripMenuItem.Name = "getCenterToolStripMenuItem";
+			this.getCenterToolStripMenuItem.Size = new System.Drawing.Size(165, 26);
+			this.getCenterToolStripMenuItem.Text = "Get Center";
+			this.getCenterToolStripMenuItem.Click += new System.EventHandler(this.getCenterToolStripMenuItem_Click);
+			// 
+			// aPIServerToolStripMenuItem
+			// 
+			this.aPIServerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loadDataToolStripMenuItem});
+			this.aPIServerToolStripMenuItem.Name = "aPIServerToolStripMenuItem";
+			this.aPIServerToolStripMenuItem.Size = new System.Drawing.Size(90, 24);
+			this.aPIServerToolStripMenuItem.Text = "API Server";
+			// 
+			// loadDataToolStripMenuItem
+			// 
+			this.loadDataToolStripMenuItem.Name = "loadDataToolStripMenuItem";
+			this.loadDataToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+			this.loadDataToolStripMenuItem.Text = "Load Data";
+			this.loadDataToolStripMenuItem.Click += new System.EventHandler(this.loadDataToolStripMenuItem_Click);
 			// 
 			// webMap
 			// 
@@ -81,12 +110,27 @@
 			this.webMap.Size = new System.Drawing.Size(867, 617);
 			this.webMap.TabIndex = 1;
 			// 
-			// getCenterToolStripMenuItem
+			// logToolStripMenuItem
 			// 
-			this.getCenterToolStripMenuItem.Name = "getCenterToolStripMenuItem";
-			this.getCenterToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-			this.getCenterToolStripMenuItem.Text = "Get Center";
-			this.getCenterToolStripMenuItem.Click += new System.EventHandler(this.getCenterToolStripMenuItem_Click);
+			this.logToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openToolStripMenuItem,
+            this.closeToolStripMenuItem});
+			this.logToolStripMenuItem.Name = "logToolStripMenuItem";
+			this.logToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+			this.logToolStripMenuItem.Text = "Log";
+			// 
+			// openToolStripMenuItem
+			// 
+			this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+			this.openToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+			this.openToolStripMenuItem.Text = "Open";
+			this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+			// 
+			// closeToolStripMenuItem
+			// 
+			this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+			this.closeToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+			this.closeToolStripMenuItem.Text = "Close";
 			// 
 			// FrmMap
 			// 
@@ -98,6 +142,7 @@
 			this.MainMenuStrip = this.mnuMap;
 			this.Name = "FrmMap";
 			this.Text = "Map Dump";
+			this.Load += new System.EventHandler(this.FrmMap_Load);
 			this.mnuMap.ResumeLayout(false);
 			this.mnuMap.PerformLayout();
 			this.ResumeLayout(false);
@@ -113,6 +158,11 @@
 		private System.Windows.Forms.ToolStripMenuItem alertTestToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem addMarkerToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem getCenterToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem aPIServerToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem loadDataToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem logToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
 	}
 }
 

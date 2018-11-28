@@ -13,10 +13,19 @@ namespace DUMP
 {
 	public partial class FrmMap : Form
 	{
+		private Log _log;
+
 		public FrmMap()
 		{
 			InitializeComponent();
+
+			this.webMap.Refresh(WebBrowserRefreshOption.Completely);
+			//this.webMap.Document.Cookie.Remove(0, this.webMap.Document.Cookie.Length);
 			this.webMap.Navigate("http://localhost");
+		}
+
+		private void FrmMap_Load(object sender, EventArgs e)
+		{
 		}
 
 		private void alertTestToolStripMenuItem_Click(object sender, EventArgs e)
@@ -34,12 +43,17 @@ namespace DUMP
 
 		private void addMarkerToolStripMenuItem_Click(object sender, EventArgs e)
 		{
+			AddMarkeronMap(37.542658, 126.842199);
+		}
+
+		private void AddMarkeronMap(double lat, double lng)
+		{
 			// call javascript function on web page
 			if (this.webMap.Document != null)
 			{
 				object[] obj = new object[2];
-				obj[0] = 37.542658;
-				obj[1] = 126.842199;
+				obj[0] = lat;
+				obj[1] = lng;
 
 				webMap.Document.InvokeScript(MapFunc.AddMarker, obj);
 			}
@@ -62,6 +76,43 @@ namespace DUMP
 				MessageBox.Show(json["lat"].ToString());
 
 				MessageBox.Show(json["lng"].ToString());
+			}
+		}
+
+		private void loadDataToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			string file = Application.StartupPath + "\\data\\park_seoul_gangseogu.xls";
+			G2IS_APServer.DataHandler datahander = new G2IS_APServer.DataHandler();
+			DataTable dt = datahander.GetDataTablefromExcel(file);
+
+			WriteLog(dt.Rows.Count.ToString() + "건 로드가 되었습니다.");
+
+			foreach (DataRow row in dt.Rows)
+			{
+				AddMarkeronMap((double)row["latitude"] + 0.000060, (double)row["longitude"]);
+			}
+		}
+
+		private void openToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			FactoryLog();
+		}
+
+		private void WriteLog(string msg)
+		{
+			FactoryLog();
+
+			_log.richTextBox2.Text += msg + Environment.NewLine;
+		}
+
+		private void FactoryLog()
+		{
+			if (_log == null)
+			{
+				_log = new Log();
+				_log.StartPosition = FormStartPosition.Manual;
+				_log.Location = new Point(this.Location.X + this.Width, this.Location.Y);
+				_log.Show();
 			}
 		}
 	}
